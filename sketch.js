@@ -4,13 +4,13 @@ var database;
 function preload()
 {
 	//load images here
-  dogimg= loadIamge("dogImg.png")
-  happydogimg = loadIamge("dogImg1.png")
+  dogimg= loadImage("dogImg.png")
+  happydogimg = loadImage("dogImg1.png")
 }
 
 function setup() {
 	createCanvas(800, 700);
-  database=fire.database();
+  database=firebase.database();
   dog=createSprite(400,400);
   dog.addImage("dog",dogimg);
   dog.scale =0.5;
@@ -22,9 +22,11 @@ function readStock(data){
 } 
 //Function to write values in DB 
 function writeStock(x){ 
-  if(x <= 0){
+  if(x <= 0)
+  {
     x=0;
-  }else{
+  }
+	else{
     x=x-1;
   }
   database.ref('/').update({ 
