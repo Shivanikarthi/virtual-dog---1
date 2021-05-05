@@ -1,6 +1,7 @@
 //Create variables here
 var dog,dogimg,happydogimg,database,food,foodstock;
 var database;
+var foods;
 function preload()
 {
 	//load images here
